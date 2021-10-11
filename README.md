@@ -3,6 +3,9 @@
 
 
 # Table of Contents:
-## Array
+## Reverse an Array
 
 - [Challenge Code 01 ](./java/array-reverse/README.md) 
+## array-insert-shift
+
+- [Challenge Code 02 ](./java/array-insert-shift/README.md) 
