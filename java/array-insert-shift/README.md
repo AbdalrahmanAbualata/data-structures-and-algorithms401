@@ -2,7 +2,7 @@
 * Given an array of integers and a value to be inserted, the method:inserts the value on the middle of the given array.
 
 ## Whiteboard Process
-![whiteboard](./reverseArray.png)
+![whiteboard](./array-insert-shift.png)
 
 ## Approach & Efficiency
 * Created a method named inseartShiftArray
