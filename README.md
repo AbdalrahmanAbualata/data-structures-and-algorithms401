@@ -9,3 +9,7 @@
 ## array-insert-shift
 
 - [Challenge Code 02 ](./java/array-insert-shift/README.md) 
+
+## array-binary-search
+
+- [Challenge Code 03 ](./java/array-binary-search/README.md) 
