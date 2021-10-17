@@ -66,4 +66,53 @@ class LibraryTest {
         String expected = " { 4 } -->  { 3 } -->  { 2 } -->  { 1 } --> NULL";
         assertEquals( expected,output,"Must be   { 4 } -->  { 3 } -->  { 2 } -->  { 1 } --> NULL");
     }
+    @Test public void testAddToTheEnd(){
+        testList.insert(7);
+        testList.append(10);
+        testList.append(11);
+        testList.append("im the final one");
+        String output = testList.toString();
+        String expected = " { 7 } -->  { 10 } -->  { 11 } -->  { im the final one } --> NULL";
+        assertEquals(expected,output);
+    }
+    @Test public void testInsertBeforeTheMiddleValue(){
+        testList.insert(7);//the first element (head)
+        testList.append(10);
+        testList.append(11);
+        testList.append(12);
+        testList.insertBefore(11,"im the middle value");
+        String output = testList.toString();
+        String expected = " { 7 } -->  { 10 } -->  { im the middle value } -->  { 11 } -->  { 12 } --> NULL";
+        assertEquals(expected,output);
+    }
+    @Test public void testInsertBeforeTheFirstValue(){
+        testList.insert(7);//the first element (head)
+        testList.append(10);
+        testList.append(11);
+        testList.append(12);
+        testList.insertBefore(7,"im the middle value");
+        String output = testList.toString();
+        String expected = " { im the middle value } -->  { 7 } -->  { 10 } -->  { 11 } -->  { 12 } --> NULL";
+        assertEquals(expected,output);
+    }
+    @Test public void testInsertAfterTheMiddleValue(){
+        testList.insert(7);//the first element (head)
+        testList.append(10);
+        testList.append(11);
+        testList.append(12);
+        testList.insertAfter(11,"after thr middle");
+        String output = testList.toString();
+        String expected = " { 7 } -->  { 10 } -->  { 11 } -->  { after thr middle } -->  { 12 } --> NULL";
+        assertEquals(expected,output);
+    }
+    @Test public void testInsertAfterTheLastValue(){
+        testList.insert(7);//the first element (head)
+        testList.append(10);
+        testList.append(11);
+        testList.append(12);
+        testList.insertAfter(12,"after thr lastValue");
+        String output = testList.toString();
+        String expected = " { 7 } -->  { 10 } -->  { 11 } -->  { 12 } -->  { after thr lastValue } --> NULL";
+        assertEquals(expected,output);
+    }
 }

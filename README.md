@@ -16,4 +16,8 @@
 ## linked-list
 
 - [Challenge Code 05 ](./linked-list/README.md) 
+
+## linked-list-insertions
+
+- [Challenge Code 06 ](./linked-list/README.md)
 - 
