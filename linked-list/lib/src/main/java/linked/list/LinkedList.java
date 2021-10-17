@@ -33,5 +33,61 @@ public class LinkedList<T> {
         output += "NULL";
         return output;
     }
+    public void append(T value) {
+        Node currentNode = head;
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+        }else {
+            while (currentNode.next != null) {
+                currentNode = currentNode.next;
+            }
+        }
+        currentNode.next = newNode;
+    }
+
+
+    public void insertBefore(T value, T newVal) {
+        if (head == null) {
+            System.out.println("The value " + value + " is not exist!");
+
+        } else if (head.value == value) {
+            this.insert(newVal);
+
+        }else  {
+
+            Node currentNode = head;
+
+            while (currentNode.next != null) {
+                if (currentNode.next.value == value) {
+                    Node newNode = new Node(newVal);
+                    newNode.next = currentNode.next;
+                    currentNode.next = newNode;
+                    return;
+                }
+                currentNode = currentNode.next;
+            }
+            System.out.println("The value " + value + " is not exist!");
+        }
+    }
+
+    public void insertAfter(T value, T newVal) {
+        if (head == null) {
+            System.out.println("The value " + value + " is not exist!");
+        }else {
+            Node currentNode = head;
+            while (currentNode != null) {
+                if (currentNode.value == value) {
+                    Node newNode = new Node(newVal);
+                    newNode.next = currentNode.next;
+                    currentNode.next = newNode;
+                    return;
+                }
+                currentNode = currentNode.next;
+            }
+
+            System.out.println("The value " + value + " is not exist!");
+        }
+    }
 }
 

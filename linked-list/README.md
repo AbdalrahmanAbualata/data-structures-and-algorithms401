@@ -1,18 +1,24 @@
-# code
-* [code files ](./lib/src/main/java/linked/list)
-* [code test files ](./lib/src/test/java/linked/list/LibraryTest.java)
-# Singly Linked List
-You can create Linked list and manipulate it.
 
-## Challenge
-writing methods to insert elements in the list, search on specific elements and print the list as a string.
+ ## Challenge Summary
+More implementaitons on linked list, like (insert before, insert after, append).
+we Need add the following methods:
+
+addBefore(val, newVal): to search and add a new value before a specific one.  
+addAfter(val, newVal): to search and add a new value after a specific one.
+append(val): to add a new value to the end of the list.
+
+## Whiteboard Process
+![whiteboard](./linked-list-insertions.png)
 
 ## Approach & Efficiency
-There are two main classes ( Node , LinkedList ), each Node has two fields (value, next node) and the LinkedList has one field which is the (head node) head will pointing always to the first node of the list, when you need to add value to the first of the  list, it will take the head place and pointing to the old head. 
-* The time complexity is O(1) for insert method since we are only checking the first node and that gets pointed by the new node .
-* The time complexity is O(N) for includes since at worst condition we might have to traverse through the list to see if the value exists.
-* The time complexity is  O(N) for toString since we traverse through the list to print out the String version.
-## API
-* insert(value); will insert the passed value as a new head of the list and make its next pointer pointing on the old head.
-* includes(value); will search through the list on the passed value, if it find the value .. the method will return true. else, will return false.
-* toString(); will print out the whole linked list as a string to the user.
+
+with the (addBefore AND addAfter) methods, will start from the head and search on the specific value, if it found.. add the new value before or after it. If not, then print out a message or exception that tell the user the value is not exist.
+
+the append method: start from head and step through the last element, then add the new value there.
+append :-time -->O(n) .
+addBefore :-time -->O(n).
+addAfter :-time -->O(n).
+
+## Solution
+* [code files ](./lib/src/main/java/linked/list/LinkedList.java)
+* [code test files ](./lib/src/test/java/linked/list/LibraryTest.java)
