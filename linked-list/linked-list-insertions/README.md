@@ -8,7 +8,7 @@ addAfter(val, newVal): to search and add a new value after a specific one.
 append(val): to add a new value to the end of the list.
 
 ## Whiteboard Process
-![whiteboard](./linked-list-insertions.png)
+![whiteboard](linked-list-insertions.png)
 
 ## Approach & Efficiency
 
@@ -20,5 +20,5 @@ addBefore :-time -->O(n).
 addAfter :-time -->O(n).
 
 ## Solution
-* [code files ](./lib/src/main/java/linked/list/LinkedList.java)
-* [code test files ](./lib/src/test/java/linked/list/LibraryTest.java)
+* [code files ](../lib/src/main/java/linked/list/LinkedList.java)
+* [code test files ](../lib/src/test/java/linked/list/LibraryTest.java)
