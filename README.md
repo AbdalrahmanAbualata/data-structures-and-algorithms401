@@ -15,9 +15,9 @@
 - [Challenge Code 03 ](./java/array-binary-search/README.md)
 ## linked-list
 
-- [Challenge Code 05 ](./linked-list/README.md) 
+- [Challenge Code 05 ](linked-list/linked-list-insertions/README.md) 
 
 ## linked-list-insertions
 
-- [Challenge Code 06 ](./linked-list/README.md)
+- [Challenge Code 06 ](linked-list/linked-list-insertions/README.md)
 - 
