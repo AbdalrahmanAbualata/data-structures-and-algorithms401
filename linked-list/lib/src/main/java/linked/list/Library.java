@@ -17,8 +17,8 @@ public class Library {
         newList.insert("Hello");
         newList.append(11);
         newList.append(12);
-//        newList.append(13);
-//        newList.append(9);
+ //        newList.append(13);
+ //        newList.append(9);
         newList.insertBefore(3,"im the value befor 3");
         newList.insertAfter(0,"im the value after 0");
 
@@ -27,6 +27,10 @@ public class Library {
         System.out.println(newList.includes(3));
         System.out.println(newList.includes("Hello"));
         System.out.println(newList.includes("im the value after 0"));
+
+        System.out.println(newList.kthFromEnd(2));//output 5
+        System.out.println(newList.kthFromEnd(0));//output 12
+
         }
     }
 

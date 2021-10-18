@@ -2,11 +2,13 @@ package linked.list;
 
 public class LinkedList<T> {
     Node head = null;
+    private int size =0;
 
     public void  insert (T value){ // add at the first of the linkedList
         Node<T> newNode = new Node<T> (value);
         newNode.next =head ;
         head=newNode;
+        size++;
     }
 
     public boolean includes(T value) {
@@ -38,12 +40,14 @@ public class LinkedList<T> {
         Node newNode = new Node(value);
         if (head == null) {
             head = newNode;
+            size++;
         }else {
             while (currentNode.next != null) {
                 currentNode = currentNode.next;
             }
         }
         currentNode.next = newNode;
+        size++;
     }
 
 
@@ -63,6 +67,7 @@ public class LinkedList<T> {
                     Node newNode = new Node(newVal);
                     newNode.next = currentNode.next;
                     currentNode.next = newNode;
+                    size++;
                     return;
                 }
                 currentNode = currentNode.next;
@@ -81,12 +86,41 @@ public class LinkedList<T> {
                     Node newNode = new Node(newVal);
                     newNode.next = currentNode.next;
                     currentNode.next = newNode;
+                    size++;
                     return;
                 }
                 currentNode = currentNode.next;
             }
 
             System.out.println("The value " + value + " is not exist!");
+        }
+    }
+
+//********************************************************************************************
+//    code challenge 07
+// size proparatie added to the linkedlist class
+
+    public int getSize() {
+        return size;
+    }
+    public int kthFromEnd(int k){
+        System.out.println("the size of the Linkedlist ="+getSize());
+        int index = this.size - k;
+        if(k<0){
+            System.out.println("K must be positive number");
+            return -1;
+        }else if (index > 0 ){
+            Node currentNode = this.head;
+            int count = 1;
+            while(count!=index){
+                currentNode = currentNode.next;
+                count++;
+            }
+            return (int) currentNode.value;
+        }
+        else{
+            System.out.println("K is larger than or equal the size of linked list..");
+            return -1;
         }
     }
 }

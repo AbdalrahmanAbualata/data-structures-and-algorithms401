@@ -115,4 +115,66 @@ class LibraryTest {
         String expected = " { 7 } -->  { 10 } -->  { 11 } -->  { 12 } -->  { after thr lastValue } --> NULL";
         assertEquals(expected,output);
     }
+
+    // code chalege 07
+    @Test
+    public void testKthFromEndWhen_K_isGraterThanTheLengthOfList() {
+        testList.insert(5);//the first element (head)
+        testList.append(6);
+        testList.append(7);
+        testList.append(8);
+        int output = testList.kthFromEnd(5);
+        int expected = -1;
+        assertEquals( expected, output,"The output must be -1");
+    }
+
+    @Test
+    public void testKthFromEndWhen_K_isEqualToTheLengthOfList() {
+        testList.insert(5);//the first element (head)
+        testList.append(6);
+        testList.append(7);
+        testList.append(8);
+        int output = testList.kthFromEnd(4);
+        int expected = -1;
+        assertEquals( expected, output,"The output must be -1");
+    }
+
+    @Test
+    public void testKthFromEndWhen_K_isNegativeNumber() {
+        testList.insert(5);//the first element (head)
+        testList.append(6);
+        testList.append(7);
+        testList.append(8);
+        int output = testList.kthFromEnd(-4);
+        int expected = -1;
+        assertEquals( expected, output,"The output must be -1");
+    }
+
+    @Test
+    public void testKthFromEndWhenTheSizeOfTheListIsOne() {
+        testList.insert(7);//the first element (head)
+        int output = testList.kthFromEnd(0);
+        int expected = 7;
+        assertEquals( expected, output,"The output must be 7");
+        output = testList.kthFromEnd(1);
+        expected = -1;
+        assertEquals( expected, output,"The output must be -1");
+    }
+
+    @Test
+    public void testKthFromEndWhen_K_InTheMiddleOfTheList() {
+        testList.insert(7);//the first element (head)
+        testList.append(5);
+        testList.append(6);
+        testList.append(7);
+        testList.append(8);
+        testList.append(9);
+        testList.append(10);
+        int output = testList.kthFromEnd(5);
+        int expected = 5;
+        assertEquals( expected, output,"The output must be 5");
+        output = testList.kthFromEnd(3);
+        expected = 7;
+        assertEquals( expected, output,"The output must be 7");
+    }
 }

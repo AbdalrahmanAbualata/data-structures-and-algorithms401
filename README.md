@@ -20,4 +20,7 @@
 ## linked-list-insertions
 
 - [Challenge Code 06 ](linked-list/linked-list-insertions/README.md)
-- 
+
+## linked-list-kth
+
+- [Challenge Code 07 ](linked-list/linked-list-kth/README.md)
