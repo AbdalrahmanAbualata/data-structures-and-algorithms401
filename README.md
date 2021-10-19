@@ -24,3 +24,7 @@
 ## linked-list-kth
 
 - [Challenge Code 07 ](linked-list/linked-list-kth/README.md)
+
+## linked-list-zip
+
+- [Challenge Code 08 ](linked-list/linked-list-zip/README.md)
