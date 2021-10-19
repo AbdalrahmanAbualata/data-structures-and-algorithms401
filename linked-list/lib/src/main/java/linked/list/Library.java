@@ -28,9 +28,22 @@ public class Library {
         System.out.println(newList.includes("Hello"));
         System.out.println(newList.includes("im the value after 0"));
 
+        // code callenge 07
         System.out.println(newList.kthFromEnd(2));//output 5
         System.out.println(newList.kthFromEnd(0));//output 12
 
+        // code callenge 08
+        LinkedList newList2 = new LinkedList();
+
+        newList2.insert(5);
+        newList2.insert(4);
+        newList2.insert(3);
+        newList2.insert(2);
+        newList2.insert(1);
+
+        System.out.println(newList);
+        System.out.println(newList2);
+        System.out.println( LinkedList.zipLists(newList,newList2));
         }
     }
 

@@ -45,9 +45,9 @@ public class LinkedList<T> {
             while (currentNode.next != null) {
                 currentNode = currentNode.next;
             }
+            currentNode.next = newNode;
+            size++;
         }
-        currentNode.next = newNode;
-        size++;
     }
 
 
@@ -123,5 +123,35 @@ public class LinkedList<T> {
             return -1;
         }
     }
+    //***************************************************************************************
+    //    code challenge 08
+    public static LinkedList zipLists(LinkedList linkedList1, LinkedList linkedList2){
+        if (linkedList1.getSize() == 0) return linkedList2;
+        if (linkedList2.getSize() == 0) return linkedList1;
+
+        int numOfIterations = getLargerSize( linkedList1.getSize(), linkedList2.getSize());
+        LinkedList zipeddList = new LinkedList();
+        Node current1 = linkedList1.head;
+        Node current2 = linkedList2.head;
+        for(int i =0 ; i < numOfIterations; i++){
+            if(current1 != null){
+                zipeddList.append(current1.value);
+                current1=current1.next;
+            }
+            if(current2 != null){
+                zipeddList.append(current2.value);
+                current2=current2.next;
+            }
+        }
+        return zipeddList;
+    }
+
+    private static int getLargerSize(int size1, int size2){
+        if(size1 >= size2)
+            return size1;
+        else
+            return size2;
+    }
+
 }
 
