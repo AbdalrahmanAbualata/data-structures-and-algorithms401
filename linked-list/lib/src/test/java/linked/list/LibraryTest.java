@@ -115,7 +115,7 @@ class LibraryTest {
         String expected = " { 7 } -->  { 10 } -->  { 11 } -->  { 12 } -->  { after thr lastValue } --> NULL";
         assertEquals(expected,output);
     }
-
+    //*********************************************************************************
     // code chalege 07
     @Test
     public void testKthFromEndWhen_K_isGraterThanTheLengthOfList() {
@@ -177,4 +177,61 @@ class LibraryTest {
         expected = 7;
         assertEquals( expected, output,"The output must be 7");
     }
+//    ******************************************************************
+    // code chalege 08
+
+    @Test public void testZipLists() {
+        LinkedList testList1 = new LinkedList();
+        LinkedList testList2 = new LinkedList();
+        testList1.insert(10);
+        testList1.insert(9);
+        testList1.insert(8);
+        testList1.insert(4);
+        testList2.insert(14);
+        testList2.insert(7);
+        testList2.insert(22);
+        LinkedList newList = LinkedList.zipLists(testList1, testList2);
+        String expected = " { 4 } -->  { 22 } -->  { 8 } -->  { 7 } -->  { 9 } -->  { 14 } -->  { 10 } --> NULL";
+        String output = newList.toString();
+        assertEquals(expected, output);
+
+        int expectedSize = 7;
+        int actualSize = newList.getSize();
+        assertEquals( expectedSize, actualSize,"Size must be 7");
+    }
+
+    @Test
+    public void testZipListsWithSizeZeroForOneOfTheLists() {
+        LinkedList testList1 = new LinkedList();
+        LinkedList testList2 = new LinkedList();
+
+        testList2.insert(14);
+        testList2.insert(7);
+        testList2.insert(22);
+        LinkedList newList = LinkedList.zipLists(testList1, testList2);
+        String expected = " { 22 } -->  { 7 } -->  { 14 } --> NULL";
+        String output = newList.toString();
+        assertEquals(expected, output);
+
+        int expectedSize = 3;
+        int actualSize = newList.getSize();
+        assertEquals( expectedSize, actualSize,"Size must be 3");
+    }
+
+    @Test
+    public void testZipListsWithSizeZeroForTheLists() {
+        LinkedList testList1 = new LinkedList();
+        LinkedList testList2 = new LinkedList();
+
+        LinkedList newList = LinkedList.zipLists(testList1, testList2);
+        String expected = "NULL";
+        String output = newList.toString();
+        assertEquals(expected, output);
+
+        int expectedSize = 0;
+        int actualSize = newList.getSize();
+        assertEquals( expectedSize, actualSize,"Size must be 0");
+    }
+
+
 }
