@@ -5,14 +5,14 @@
 # Table of Contents:
 ## Reverse an Array
 
-- [Challenge Code 01 ](./java/array-reverse/README.md) 
+- [Challenge Code 01 ](java/array-reverse/README.md) 
 ## array-insert-shift
 
-- [Challenge Code 02 ](./java/array-insert-shift/README.md) 
+- [Challenge Code 02 ](java/array-insert-shift/README.md) 
 
 ## array-binary-search
 
-- [Challenge Code 03 ](./java/array-binary-search/README.md)
+- [Challenge Code 03 ](java/array-binary-search/README.md)
 ## linked-list
 
 - [Challenge Code 05 ](linked-list/linked-list-insertions/README.md) 
@@ -28,3 +28,7 @@
 ## linked-list-zip
 
 - [Challenge Code 08 ](linked-list/linked-list-zip/README.md)
+
+## stack-and-queue
+
+- [Challenge Code 10 ](stack-and-queue/README.md)
