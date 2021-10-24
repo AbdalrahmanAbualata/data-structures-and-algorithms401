@@ -1,4 +1,4 @@
-[code](stack-and-queue/lib/src/main/java/stackAndQueue)
+[code](../lib/src/main/java/stackAndQueue)
 # Stacks and Queues
 This app must implement the Stack and Queue data structures.
 

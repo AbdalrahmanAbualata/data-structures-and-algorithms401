@@ -31,4 +31,8 @@
 
 ## stack-and-queue
 
-- [Challenge Code 10 ](stack-and-queue/README.md)
+- [Challenge Code 10 ](stack-and-queue/code challenge 10/README.md)
+
+## stack-queue-pseudo
+
+- [Challenge Code 11 ](stack-and-queue/code callenge 11/README.md)
