@@ -35,6 +35,17 @@ public class Library {
 
 
         System.out.println(myQueue.size);
+
+
+        PseudoQueue<Integer> pQueue = new PseudoQueue<>();
+        pQueue.enqueue(20);
+        pQueue.enqueue(15);
+        pQueue.enqueue(10);
+        System.out.println(pQueue.getSize());
+        System.out.println(pQueue);
+        System.out.println(pQueue.dequeue());
+        System.out.println(pQueue);
+
     }
 
 }
