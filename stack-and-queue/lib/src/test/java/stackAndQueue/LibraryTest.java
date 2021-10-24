@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class LibraryTest {
     Stack<Integer> myStack = new Stack<Integer>();
     Queue<Integer> myQueue = new Queue<>();
+    PseudoQueue<Integer> myPseudoQueue = new PseudoQueue<>();
     @Test public void testPushOntoTheStack() {
         myStack.push(5);
         int size = myStack.size;
@@ -151,5 +152,78 @@ public class LibraryTest {
     @Test public void testCallingDequeueOrPeekOnEmptyQueue() {
         assertNull(myQueue.peek());
         assertNull(myQueue.dequeue());
+    }
+//    ****************************************************************************
+@Test public void testEnqueueIntoAPseudoQueue() {
+
+    myPseudoQueue.enqueue(10);
+    int size = myPseudoQueue.getSize();
+    int expectedSize = 1;
+    assertEquals("size must be 1",expectedSize,size);
+}
+
+    @Test public void testEnqueueMultipleValuesIntoAPseudoQueue() {
+        myPseudoQueue.enqueue(10);
+        myPseudoQueue.enqueue(9);
+        myPseudoQueue.enqueue(5);
+        myPseudoQueue.enqueue(6);
+        myPseudoQueue.enqueue(3);
+        myPseudoQueue.enqueue(1);
+        int size = myPseudoQueue.getSize();
+        int expectedSize = 6;
+        assertEquals("size must be 6",expectedSize,size);
+    }
+    @Test public void testDequeueOutOfAPseudoQueue() {
+        myPseudoQueue.enqueue(10);
+        myPseudoQueue.enqueue(9);
+        myPseudoQueue.enqueue(5);
+        myPseudoQueue.enqueue(6);
+        myPseudoQueue.enqueue(3);
+        int value = myPseudoQueue.dequeue();
+        int expectedValue = 10;
+        int size = myPseudoQueue.getSize();
+        int expectedSize = 4;
+        assertEquals("size must be 4",expectedSize,size);
+        assertEquals("value must be 10",expectedValue,value);
+    }
+
+    @Test public void testPeekIntoAPseudoQueue() {
+        myPseudoQueue.enqueue(10);
+        myPseudoQueue.enqueue(9);
+        myPseudoQueue.enqueue(5);
+        myPseudoQueue.enqueue(6);
+        myPseudoQueue.enqueue(3);
+        int value = myPseudoQueue.peek();
+        int expectedValue = 10;
+        int size = myPseudoQueue.getSize();
+        int expectedSize = 5;
+        assertEquals("size must be 5",expectedSize,size);
+        assertEquals("value must be 10",expectedValue,value);
+
+    }
+    @Test public void testEmptyAPseudoQueueAfterMultipleDequeues() {
+        myPseudoQueue.enqueue(10);
+        myPseudoQueue.enqueue(9);
+        myPseudoQueue.enqueue(5);
+        myPseudoQueue.dequeue();
+        myPseudoQueue.dequeue();
+        myPseudoQueue.dequeue();
+        int size = myPseudoQueue.getSize();
+        int expectedSize = 0;
+        assertEquals("size must be 0",expectedSize,size);
+    }
+
+    @Test public void testInstantiateAnEmptyPseudoQueue() {
+        int size = myPseudoQueue.getSize();
+        int expectedSize = 0;
+        assertEquals("size must be 0",expectedSize,size);
+        String output = myPseudoQueue.toString();
+        String expectedOutput = "null";
+        assertEquals(expectedOutput,output);
+    }
+
+    @Test public void testCallingDequeueOrPeekOnEmptyPseudoQueue() {
+        assertNull(myPseudoQueue.peek());
+        assertNull(myPseudoQueue.dequeue());
     }
 }
