@@ -31,8 +31,12 @@
 
 ## stack-and-queue
 
-- [Challenge Code 10 ](stack-and-queue/code challenge 10/README.md)
+- [Challenge Code 10 ](./stack-and-queue/code%20challenge%2010/README.md)
 
 ## stack-queue-pseudo
 
-- [Challenge Code 11 ](stack-and-queue/code callenge 11/README.md)
+- [Challenge Code 11 ](./stack-and-queue/code%20callenge%2011/README.md)
+
+## stack-queue-animal-shelter
+
+- [Challenge Code 12 ](./stack-and-queue/code%20challenge%2012/README.md)

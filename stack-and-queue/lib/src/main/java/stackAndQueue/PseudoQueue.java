@@ -37,6 +37,7 @@ public class PseudoQueue<T> {
 
         while (giveStack.top != null)
             takeStack.push(giveStack.pop());
+
     }
 
     @Override
