@@ -9,6 +9,7 @@ import stackAndQueue.AnimalShelterPackage.Animal;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import static stackAndQueue.MultiBracketValidation.validateBrackets;
 
 public class LibraryTest {
 //    Stack<Integer> myStack = new Stack<Integer>();
@@ -230,74 +231,96 @@ public class LibraryTest {
 //        assertNull(myPseudoQueue.peek());
 //        assertNull(myPseudoQueue.dequeue());
 //    }
-@Test public void testCreateEmptyAnimalShelter() {
-    AnimalShelter animalShelter = new AnimalShelter();
-    assertEquals("null",animalShelter.toString());
-}
-    @Test public void testEnqueueAnimalsToTheShelter() {
-        AnimalShelter animalShelter = new AnimalShelter();
-        Dog d2 = new Dog("dog number 2");
-        Dog d3 = new Dog("dog number 3");
-        Cat c1 = new Cat("cat number 1");
-        Cat c2 = new Cat("cat number 2");
-        animalShelter.enqueue(d2);
-        animalShelter.enqueue(d3);
-        animalShelter.enqueue(c1);
-        animalShelter.enqueue(c2);
-        String expected ="dog number 2 -- dog number 3 -- cat number 1 -- cat number 2 -- null";
-        assertEquals(expected,animalShelter.toString());
-    }
-    @Test public void testDequeuePrefCat() {
-        AnimalShelter animalShelter = new AnimalShelter();
-        Dog d2 = new Dog("dog number 2");
-        Dog d3 = new Dog("dog number 3");
-        Cat c1 = new Cat("cat number 1");
-        Cat c2 = new Cat("cat number 2");
-        animalShelter.enqueue(d2);
-        animalShelter.enqueue(d3);
-        animalShelter.enqueue(c1);
-        animalShelter.enqueue(c2);
-        Animal value = animalShelter.dequeue("cat");
-        String expected ="dog number 2 -- dog number 3 -- cat number 2 -- null";
-        assertEquals(expected,animalShelter.toString());
-        assertEquals("cat number 1",value.name);
+//@Test public void testCreateEmptyAnimalShelter() {
+//    AnimalShelter animalShelter = new AnimalShelter();
+//    assertEquals("null",animalShelter.toString());
+//}
+//    @Test public void testEnqueueAnimalsToTheShelter() {
+//        AnimalShelter animalShelter = new AnimalShelter();
+//        Dog d2 = new Dog("dog number 2");
+//        Dog d3 = new Dog("dog number 3");
+//        Cat c1 = new Cat("cat number 1");
+//        Cat c2 = new Cat("cat number 2");
+//        animalShelter.enqueue(d2);
+//        animalShelter.enqueue(d3);
+//        animalShelter.enqueue(c1);
+//        animalShelter.enqueue(c2);
+//        String expected ="dog number 2 -- dog number 3 -- cat number 1 -- cat number 2 -- null";
+//        assertEquals(expected,animalShelter.toString());
+//    }
+//    @Test public void testDequeuePrefCat() {
+//        AnimalShelter animalShelter = new AnimalShelter();
+//        Dog d2 = new Dog("dog number 2");
+//        Dog d3 = new Dog("dog number 3");
+//        Cat c1 = new Cat("cat number 1");
+//        Cat c2 = new Cat("cat number 2");
+//        animalShelter.enqueue(d2);
+//        animalShelter.enqueue(d3);
+//        animalShelter.enqueue(c1);
+//        animalShelter.enqueue(c2);
+//        Animal value = animalShelter.dequeue("cat");
+//        String expected ="dog number 2 -- dog number 3 -- cat number 2 -- null";
+//        assertEquals(expected,animalShelter.toString());
+//        assertEquals("cat number 1",value.name);
+//
+//    }
+//    @Test public void testDequeuePrefDog() {
+//        AnimalShelter animalShelter = new AnimalShelter();
+//        Dog d2 = new Dog("dog number 2");
+//        Dog d3 = new Dog("dog number 3");
+//        Cat c1 = new Cat("cat number 1");
+//        Cat c2 = new Cat("cat number 2");
+//        animalShelter.enqueue(d2);
+//        animalShelter.enqueue(d3);
+//        animalShelter.enqueue(c1);
+//        animalShelter.enqueue(c2);
+//        Animal value = animalShelter.dequeue("dog");
+//        String expected ="dog number 3 -- cat number 1 -- cat number 2 -- null";
+//        assertEquals(expected,animalShelter.toString());
+//        assertEquals("dog number 2",value.name);
+//    }
+//    @Test public void testDequeuePrefCatNotFound() {
+//        AnimalShelter animalShelter = new AnimalShelter();
+//        Dog d2 = new Dog("dog number 2");
+//        Dog d3 = new Dog("dog number 3");
+//        animalShelter.enqueue(d2);
+//        animalShelter.enqueue(d3);
+//        Animal value = animalShelter.dequeue("cat");
+//        String expected ="dog number 2 -- dog number 3 -- null";
+//        assertEquals(expected,animalShelter.toString());
+//        assertNull(value);
+//    }
+//    @Test public void testDequeuePrefAnyThingAnotherCatOrDog() {
+//        AnimalShelter animalShelter = new AnimalShelter();
+//        Dog d2 = new Dog("dog number 2");
+//        Dog d3 = new Dog("dog number 3");
+//        animalShelter.enqueue(d2);
+//        animalShelter.enqueue(d3);
+//        Animal value = animalShelter.dequeue("panda");
+//        String expected ="dog number 2 -- dog number 3 -- null";
+//        assertEquals(expected,animalShelter.toString());
+//        assertNull(value);
+//    }
+//    ********************************************************************************************
+@Test public void testBracketValidationIfTheStingEmpty() {
+    boolean test =validateBrackets("");
+    assertTrue("it must be true",test);
 
     }
-    @Test public void testDequeuePrefDog() {
-        AnimalShelter animalShelter = new AnimalShelter();
-        Dog d2 = new Dog("dog number 2");
-        Dog d3 = new Dog("dog number 3");
-        Cat c1 = new Cat("cat number 1");
-        Cat c2 = new Cat("cat number 2");
-        animalShelter.enqueue(d2);
-        animalShelter.enqueue(d3);
-        animalShelter.enqueue(c1);
-        animalShelter.enqueue(c2);
-        Animal value = animalShelter.dequeue("dog");
-        String expected ="dog number 3 -- cat number 1 -- cat number 2 -- null";
-        assertEquals(expected,animalShelter.toString());
-        assertEquals("dog number 2",value.name);
+    @Test public void testBracketValidationIfTheStingHaveOpenBracketNoClose() {
+        boolean test =validateBrackets(" { return false");
+        assertFalse("it must be false",test);
+
     }
-    @Test public void testDequeuePrefCatNotFound() {
-        AnimalShelter animalShelter = new AnimalShelter();
-        Dog d2 = new Dog("dog number 2");
-        Dog d3 = new Dog("dog number 3");
-        animalShelter.enqueue(d2);
-        animalShelter.enqueue(d3);
-        Animal value = animalShelter.dequeue("cat");
-        String expected ="dog number 2 -- dog number 3 -- null";
-        assertEquals(expected,animalShelter.toString());
-        assertNull(value);
+    @Test public void testBracketValidationIfTheStingHaveCloseBracketWithoutOpen() {
+        boolean test =validateBrackets("  return false; }");
+        assertFalse("it must be false",test);
+
     }
-    @Test public void testDequeuePrefAnyThingAnotherCatOrDog() {
-        AnimalShelter animalShelter = new AnimalShelter();
-        Dog d2 = new Dog("dog number 2");
-        Dog d3 = new Dog("dog number 3");
-        animalShelter.enqueue(d2);
-        animalShelter.enqueue(d3);
-        Animal value = animalShelter.dequeue("panda");
-        String expected ="dog number 2 -- dog number 3 -- null";
-        assertEquals(expected,animalShelter.toString());
-        assertNull(value);
+    @Test public void testBracketValidationIfTheStingWiyhCloseAndOpenBrackets() {
+        boolean test =validateBrackets(" if(true){ return true; }");
+        assertTrue("it must be true",test);
+
     }
+
 }

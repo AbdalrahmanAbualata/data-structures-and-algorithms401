@@ -4,8 +4,8 @@
 package stackAndQueue;
 import stackAndQueue.AnimalShelterPackage.Cat;
 import stackAndQueue.AnimalShelterPackage.Dog;
-
 import java.util.Locale;
+import static stackAndQueue.MultiBracketValidation.validateBrackets;
 
 public class Library {
     public static void main(String[] args) {
@@ -50,24 +50,29 @@ public class Library {
 //        System.out.println(pQueue.dequeue());
 //        System.out.println(pQueue);
 
-        AnimalShelter animals = new AnimalShelter();
+//        AnimalShelter animals = new AnimalShelter();
+//
+//        Dog d1 = new Dog("dog1");
+//        Dog d2 = new Dog("dog2");
+//        Dog d3 = new Dog("dog3");
+//        Cat c1 = new Cat("cat1");
+//        Cat c2 = new Cat("cat2");
+//        Cat c3 = new Cat("cat3");
+//        animals.enqueue(d1);
+//        animals.enqueue(d2);
+//        animals.enqueue(c1);
+//        animals.enqueue(c2);
+//        animals.enqueue(d3);
+//        animals.enqueue(c3);
+//        System.out.println(animals.getSize());
+//        System.out.println(animals.dequeue("cat"));
+//        System.out.println(animals.dequeue("dog"));
 
-        Dog d1 = new Dog("dog1");
-        Dog d2 = new Dog("dog2");
-        Dog d3 = new Dog("dog3");
-        Cat c1 = new Cat("cat1");
-        Cat c2 = new Cat("cat2");
-        Cat c3 = new Cat("cat3");
-        animals.enqueue(d1);
-        animals.enqueue(d2);
-        animals.enqueue(c1);
-        animals.enqueue(c2);
-        animals.enqueue(d3);
-        animals.enqueue(c3);
-        System.out.println(animals.getSize());
-        System.out.println(animals.dequeue("cat"));
-        System.out.println(animals.dequeue("dog"));
-
+        System.out.println(validateBrackets("{"));
+        System.out.println(validateBrackets("{ }"));
+        System.out.println(validateBrackets("{( )}"));
+        System.out.println(validateBrackets("{( )}[] ("));
+        System.out.println(validateBrackets(""));
 
     }
 
