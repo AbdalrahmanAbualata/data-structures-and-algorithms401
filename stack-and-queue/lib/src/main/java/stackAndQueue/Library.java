@@ -72,7 +72,7 @@ public class Library {
         System.out.println(validateBrackets("{ }"));
         System.out.println(validateBrackets("{( )}"));
         System.out.println(validateBrackets("{( )}[] ("));
-        System.out.println(validateBrackets(""));
+        System.out.println(validateBrackets("[{}]{}{}"));
 
     }
 

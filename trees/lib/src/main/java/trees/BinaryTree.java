@@ -1,8 +1,5 @@
 package trees;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BinaryTree <T>{
     Node root=null;
@@ -86,30 +83,28 @@ public class BinaryTree <T>{
         }
         return tree;
     }
+    public int findMaximumValue(Node root){
+//       return (int) Collections.max(this.postOrder(root)); use the array list with build in methods
+        if(this.isNotEmpty()){
+            int max =(int) root.value;
+            int left = max;
+            int right = max;
 
+            if(root.left == null && root.right == null)
+                return (int) root.value;
+            if(root.left != null)
+                left = findMaximumValue(root.left);
+            if(root.right != null)
+                right = findMaximumValue(root.right);
+            if( left > max)
+                max = left;
+            if(right > max)
+                max = right;
+            return max;
+        }
+        return 0;
+    }
 
-    //    public void preOrder(Node root){
-//        if (root !=null){
-//            System.out.println(root.value);
-//            preOrder(root.left);
-//            preOrder(root.right);
-//        }
-//        }
-//
-//    public void inOrder(Node root){
-//        if (root !=null){
-//            inOrder(root.left);
-//            System.out.println(root.value);
-//            inOrder(root.right);
-//        }
-//    }
-//    public void postOrder(Node root){
-//        if (root !=null){
-//            postOrder(root.left);
-//            postOrder(root.right);
-//            System.out.println(root.value);
-//        }
-//    }
     @Override
     public String toString() {
         return "BinaryTree{" +
