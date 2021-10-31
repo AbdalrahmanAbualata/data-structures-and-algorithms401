@@ -66,6 +66,21 @@ public class LibraryTest {
         List<Integer> expected=tree.postOrder(tree.root);
         assertArrayEquals(Arrays.asList(5,8,10).toArray(), expected.toArray());
     }
+    @Test
+    public void testFindMaximumValueMethod(){
+        BinaryTree<Integer> tree = new BinaryTree<>();
+        tree.add(10);
+        tree.add(5);
+        tree.add(22);
+        tree.add(8);
+        assertEquals(22, tree.findMaximumValue(tree.root));
+    }
+    @Test
+    public void testFindMaximumValueMethodIfTheTreeIsEmpty(){
+        BinaryTree<Integer> tree = new BinaryTree<>();
+
+        assertEquals(0, tree.findMaximumValue(tree.root));
+    }
 
 
 }
