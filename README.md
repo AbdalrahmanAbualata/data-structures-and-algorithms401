@@ -47,8 +47,12 @@
 
 ## code challenge 
 
-- [Challenge Code 14 ](./stack-and-queue/code challenge 14/cc14.png)
+- [Challenge Code 14 ](./stack-and-queue/code%20challenge%2014/cc14.png)
 
 ## trees
 
-- [Challenge Code 15 ](./trees/README.md)
+- [Challenge Code 15 ](./trees/trees/README.md)
+
+## tree-max
+
+- [Challenge Code 16 ](./trees/tree-max/README.md)
