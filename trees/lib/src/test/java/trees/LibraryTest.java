@@ -81,6 +81,23 @@ public class LibraryTest {
 
         assertEquals(0, tree.findMaximumValue(tree.root));
     }
+    @Test
+    public void testBreadthFirstSearchInNormalCase(){
+        BinaryTree<Integer> tree = new BinaryTree<>();
+        tree.add(1);
+        tree.add(2);
+        tree.add(3);
+        tree.add(4);
+        List<Integer> actual = tree.breadthFirstSearch(tree);
+        assertArrayEquals(Arrays.asList(1,2,3,4).toArray(),actual.toArray());
+    }
+
+    @Test
+    public void testBreadthFirstSearchIfTreeIsEmpty(){
+        BinaryTree<Integer> tree = new BinaryTree<>();
+        List<Integer> actual = tree.breadthFirstSearch(tree);
+        assertArrayEquals(Arrays.asList().toArray(),actual.toArray());
+    }
 
 
 }

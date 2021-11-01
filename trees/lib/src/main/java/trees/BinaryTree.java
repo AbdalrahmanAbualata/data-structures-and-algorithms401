@@ -105,6 +105,28 @@ public class BinaryTree <T>{
         return 0;
     }
 
+
+    public List<T> breadthFirstSearch(BinaryTree binaryTree){
+        List <T> tree = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        if(isNotEmpty()){
+            queue.add(binaryTree.root);
+            while(!queue.isEmpty()){
+
+                Node currentNode = queue.poll();
+                tree.add((T)currentNode.value);
+
+                if(currentNode.left != null){
+                    queue.add(currentNode.left);
+                }
+                if(currentNode.right != null){
+                    queue.add(currentNode.right);
+                }
+            }
+        }
+        return tree;
+    }
+
     @Override
     public String toString() {
         return "BinaryTree{" +
