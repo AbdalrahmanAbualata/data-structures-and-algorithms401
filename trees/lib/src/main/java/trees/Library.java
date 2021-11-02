@@ -3,6 +3,9 @@
  */
 package trees;
 
+//import k_aryTree.FizzBuzzTree;
+import k_aryTree.K_aryTree;
+
 import java.util.Collections;
 
 public class Library {
@@ -53,17 +56,33 @@ public class Library {
 //        System.out.println(tree.findMaximumValue(tree.root));
 //        System.out.println(Collections.max(tree.postOrder(tree.root)));  // another way using collection.max
 
-        tree.add(1);
-        tree.add(2);
-        tree.add(3);
-        tree.add(4);
-        tree.add(5);
-        tree.add(6);
-        tree.add(7);
-        tree.add(8);
-        tree.add(9);
-        tree.add(10);
-        System.out.println(tree.breadthFirstSearch(tree));
+//        tree.add(1);
+//        tree.add(2);
+//        tree.add(3);
+//        tree.add(4);
+//        tree.add(5);
+//        tree.add(6);
+//        tree.add(7);
+//        tree.add(8);
+//        tree.add(9);
+//        tree.add(10);
+//        System.out.println(tree.breadthFirstSearch(tree));
+
+
+                K_aryTree<Integer> ktree = new K_aryTree<>(4);
+        ktree.add(1);
+        ktree.add(2);
+        ktree.add(3);
+        ktree.add(4);
+        ktree.add(5);
+        ktree.add(6);
+        ktree.add(7);
+        ktree.add(8);
+        ktree.add(9);
+        ktree.add(15);
+        ktree.add(20);
+        System.out.println(ktree.breadthFirstSearch());
+        System.out.println( K_aryTree.fizzBuzzTree(ktree).breadthFirstSearch());
 
     }
 }
