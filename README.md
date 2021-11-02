@@ -60,3 +60,7 @@
 ## tree-breadth-first
 
 - [Challenge Code 17 ](./trees/tree-breadth-first/README.md)
+
+## tree-fizz-buzz
+
+- [Challenge Code 18 ](./trees/tree-fizz-buzz/README.md)
