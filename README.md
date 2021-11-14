@@ -64,3 +64,7 @@
 ## tree-fizz-buzz
 
 - [Challenge Code 18 ](./trees/tree-fizz-buzz/README.md)
+
+## Insertion-Sort
+
+- [Challenge Code 26 ](./challenges-in-week-6/insertionSort/README.md)
