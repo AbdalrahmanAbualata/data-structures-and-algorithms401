@@ -68,3 +68,8 @@
 ## Insertion-Sort
 
 - [Challenge Code 26 ](./challenges-in-week-6/insertionSort/README.md)
+
+
+## Merge-Sort
+
+- [Challenge Code 27 ](./challenges-in-week-6/MergeSort/README.md)
