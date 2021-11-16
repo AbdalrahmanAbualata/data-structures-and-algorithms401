@@ -73,3 +73,7 @@
 ## Merge-Sort
 
 - [Challenge Code 27 ](./challenges-in-week-6/MergeSort/README.md)
+
+## Quick-Sort
+
+- [Challenge Code 28 ](./challenges-in-week-6/quickSort/README.md)
