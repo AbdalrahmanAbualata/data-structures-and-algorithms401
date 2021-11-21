@@ -81,3 +81,7 @@
 ## hash-table
 
 - [Challenge Code 30 ](./hash-table/hashtable/README.md)
+
+## hashmap-repeated-word
+
+- [Challenge Code 31 ](./hash-table/hashmap-repeated-word/README.md)

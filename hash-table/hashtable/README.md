@@ -1,7 +1,7 @@
 
 # Hashtables
 
-[Source code =>]()
+[Source code =>](../app/src/main/java/hash/table/Hashtable.java)
 
 * Implement a hashtable to store (key, value) pairs and retrieve the value in a fast way.
 
