@@ -4,6 +4,8 @@
 package hash.table;
 
 import org.junit.Test;
+import repeatedWord.RepeatedWord;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
@@ -65,5 +67,30 @@ public class AppTest {
         assertEquals(11, output2);
         assertEquals(33, output1);
 
+    }
+
+// RepeatedWord Test code challenge 31
+    @Test public void testFindFirstRepeatedWordInNormalCase() {
+        String book = "Once upon a time, there was a brave princess who...";
+        String expected = "a";
+        assertEquals(expected, RepeatedWord.getFirstRepeatedWord(book));
+    }
+
+    @Test public void testFindFirstRepeatedWordInEmptyString() {
+        String book = "";
+
+        assertNull( RepeatedWord.getFirstRepeatedWord(book));
+    }
+
+    @Test public void testFindFirstRepeatedWordInNoStringWithNoRepeatedWords() {
+        String book = "Good night..";
+
+        assertNull( RepeatedWord.getFirstRepeatedWord(book));
+    }
+
+    @Test public void testFindFirstRepeatedWordInWordWithCommaAndSpaces() {
+        String book = "hello, world.. hello everyOne";
+        String expected = "hello";
+        assertEquals(expected, RepeatedWord.getFirstRepeatedWord(book));
     }
 }
