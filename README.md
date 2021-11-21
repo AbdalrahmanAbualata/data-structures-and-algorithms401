@@ -77,3 +77,7 @@
 ## Quick-Sort
 
 - [Challenge Code 28 ](./challenges-in-week-6/quickSort/README.md)
+
+## hash-table
+
+- [Challenge Code 30 ](./hash-table/hashtable/README.md)
