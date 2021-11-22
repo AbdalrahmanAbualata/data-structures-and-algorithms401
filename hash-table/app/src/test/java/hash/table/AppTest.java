@@ -5,6 +5,11 @@ package hash.table;
 
 import org.junit.Test;
 import repeatedWord.RepeatedWord;
+import treeIntersection.TreeIntersection;
+import trees.BinaryTree;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -92,5 +97,113 @@ public class AppTest {
         String book = "hello, world.. hello everyOne";
         String expected = "hello";
         assertEquals(expected, RepeatedWord.getFirstRepeatedWord(book));
+    }
+
+    // tree Intersection
+    @Test public void testTreeInterSectionInNormalCase() {
+        BinaryTree<Integer> tree1 = new BinaryTree();
+        BinaryTree<Integer> tree2 = new BinaryTree();
+        TreeIntersection treeIntersection = new TreeIntersection();
+
+        tree1.add(3);
+        tree1.add(5);
+        tree1.add(7);
+        tree1.add(2);
+        tree1.add(9);
+
+        tree2.add(3);
+        tree2.add(12);
+        tree2.add(10);
+        tree2.add(5);
+        tree2.add(1);
+        tree2.add(22);
+        List<Integer> expected = new ArrayList<>(); expected.add(3);expected.add(5);
+        List<Integer> output = treeIntersection.findCommonValuesInTwoBinaryTrees(tree1, tree2);
+        assertArrayEquals(expected.toArray(),output.toArray());
+
+
+    }
+
+    @Test public void testTreeInterSectionWithFirstTreeIsEmpty() {
+        BinaryTree<Integer> tree1 = new BinaryTree();
+        BinaryTree<Integer> tree2 = new BinaryTree();
+        TreeIntersection treeIntersection = new TreeIntersection();
+
+        tree2.add(3);
+        tree2.add(12);
+        tree2.add(10);
+        tree2.add(5);
+        tree2.add(1);
+        tree2.add(22);
+        List<Integer> expected = new ArrayList<>();
+        List<Integer> output = treeIntersection.findCommonValuesInTwoBinaryTrees(tree1, tree2);
+        assertArrayEquals(expected.toArray(),output.toArray());
+
+
+    }
+
+    @Test public void testTreeInterSectionWithSecondTreeIsEmpty() {
+        BinaryTree<Integer> tree1 = new BinaryTree();
+        BinaryTree<Integer> tree2 = new BinaryTree();
+        TreeIntersection treeIntersection = new TreeIntersection();
+
+        tree1.add(3);
+        tree1.add(5);
+        tree1.add(7);
+        tree1.add(2);
+        tree1.add(9);
+
+
+        tree2.add(22);
+        List<Integer> expected = new ArrayList<>();
+        List<Integer> output = treeIntersection.findCommonValuesInTwoBinaryTrees(tree1, tree2);
+        assertArrayEquals(expected.toArray(),output.toArray());
+
+
+    }
+
+    @Test public void testTreeInterSectionWithAllElementsAreCommon() {
+        BinaryTree<Integer> tree1 = new BinaryTree();
+        BinaryTree<Integer> tree2 = new BinaryTree();
+        TreeIntersection treeIntersection = new TreeIntersection();
+
+        tree1.add(3);
+        tree1.add(5);
+        tree1.add(7);
+        tree1.add(2);
+        tree1.add(9);
+
+        tree2.add(3);
+        tree2.add(5);
+        tree2.add(7);
+        tree2.add(2);
+        tree2.add(9);
+        List<Integer> expected = new ArrayList<>(); expected.add(3);expected.add(5);expected.add(7);expected.add(2);expected.add(9);
+        List<Integer> output = treeIntersection.findCommonValuesInTwoBinaryTrees(tree1, tree2);
+        assertArrayEquals(expected.toArray(),output.toArray());
+
+
+    }
+
+    @Test public void testTreeInterSectionWithNoCommonValues() {
+        BinaryTree<Integer> tree1 = new BinaryTree();
+        BinaryTree<Integer> tree2 = new BinaryTree();
+        TreeIntersection treeIntersection = new TreeIntersection();
+
+        tree1.add(3);
+        tree1.add(5);
+        tree1.add(7);
+        tree1.add(2);
+        tree1.add(9);
+
+        tree2.add(1);
+        tree2.add(10);
+        tree2.add(15);
+
+        List<Integer> expected = new ArrayList<>();
+        List<Integer> output = treeIntersection.findCommonValuesInTwoBinaryTrees(tree1, tree2);
+        assertArrayEquals(expected.toArray(),output.toArray());
+
+
     }
 }
