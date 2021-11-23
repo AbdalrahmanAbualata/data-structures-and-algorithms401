@@ -1,8 +1,8 @@
 package linkedList;
 
 public class LinkedList <T> {
-    Node head = null;
-    Node tail = null;
+   public Node head = null;
+   public Node tail = null;
     private int size =0;
 
 

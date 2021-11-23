@@ -3,6 +3,9 @@ package hash.table;
 import linkedList.LinkedList;
 import linkedList.Node;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Hashtable<T> {
     private LinkedList<T>[] buckets = new LinkedList[100];
     private final int prime = 599;
@@ -66,6 +69,48 @@ public class Hashtable<T> {
             return true;
         }
     }
+
+
+
+    // code challenge 33
+    public List<List<String>> getEntries(){
+
+        List<List<String>> entries = new ArrayList<>();
+
+        for(LinkedList ll : buckets){
+            if( isThereDataInTheCurrentBucket(ll) ){
+                Node currentNode = ll.head;
+                while(currentNode != null){
+                    List<String> entry = new ArrayList<>();
+                    entry.add(currentNode.key);
+                    entry.add(currentNode.value.toString());
+                    entries.add(entry);
+                    currentNode = currentNode.next;
+                }
+            }
+        }
+        return entries;
+    }
+
+    public List<List<String>> leftJoin(Hashtable hash2){
+        List<List<String>> entries = this.getEntries();
+
+        for( List<String> entry : entries){
+            String key = entry.get(0);
+            if(hash2.contains(key))
+                entry.add(hash2.get(key).toString());
+            else
+                entry.add(null);
+        }
+        return entries;
+    }
+
+    private boolean isThereDataInTheCurrentBucket(LinkedList ll){
+        return ! ll.isListEmpty();
+
+    }
+
+    // end of code challenge 33
 
 
     @Override
