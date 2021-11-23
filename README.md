@@ -87,4 +87,8 @@
 - [Challenge Code 31 ](./hash-table/hashmap-repeated-word/README.md)
 ## tree-intersection
 
-- [Challenge Code 31 ](./hash-table/tree-intersection/README.md)
+- [Challenge Code 32 ](./hash-table/tree-intersection/README.md)
+
+## hashmap-left-join
+
+- [Challenge Code 33 ](./hash-table/hashmap-left-join/README.md)
