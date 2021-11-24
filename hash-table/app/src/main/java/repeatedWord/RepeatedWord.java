@@ -26,4 +26,21 @@ public class RepeatedWord {
         }
         return null;
     }
+
+
+
+
+    // code challenge 34
+    public static boolean uniqueCaracters(String string){
+        Hashtable<Integer> dictionary = new Hashtable<>();
+        string = string.toLowerCase();
+        String[] words = string.split("(\\s+)|(,\\s*)");
+        for (String word : words){
+            if( dictionary.contains(word))
+                return false;
+            else
+                dictionary.add(word,1);
+        }
+        return true;
+    }
 }
