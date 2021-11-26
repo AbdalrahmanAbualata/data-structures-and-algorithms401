@@ -5,7 +5,7 @@
 * findCommonValuesInTwoBinaryTrees(tree1, tree2); tree1 and tree2 is binary trees, this method will retrun the list of integers which hold the all common values in the both trees.
 ## Whiteboard Process
 
-![Whiteboard_firstRepeatedWord](./cc32.png)
+![Whiteboard_firstRepeatedWord](./cc32updated.png)
 
 ## Approach & Efficiency
 
