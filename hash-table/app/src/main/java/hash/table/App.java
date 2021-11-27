@@ -17,6 +17,7 @@ public class App {
         Hashtable<Integer> ids = new Hashtable();
 
         ids.add("Mohamad",11);
+        ids.add("Mohamad",15);
         ids.add("Mohamad2",11);
         ids.add("Yaser",22);
         ids.add("cdd",33);
