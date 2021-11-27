@@ -4,11 +4,116 @@
 package graph;
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
     @Test public void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+    }
+
+    @Test
+    public void emptyGraph(){
+        Graph graph = new Graph();
+        assertEquals( 0, graph.getSize());
+    }
+
+    @Test
+    public void addNode() {
+        Graph graph = new Graph();
+        Node cat = graph.addNode("cat");
+        Node dog = graph.addNode("dog");
+        Node hamster = graph.addNode("hamster");
+
+        assertTrue( graph.getSize() == 3);
+        assertTrue( graph.getNodes().contains(cat));
+        assertTrue( graph.getNodes().contains(dog));
+        assertTrue( graph.getNodes().contains(hamster));
+    }
+
+    @Test
+    public void addEdge() {
+        Graph graph = new Graph();
+        Node cat = graph.addNode("cat");
+        Node dog = graph.addNode("dog");
+        Node hamster = graph.addNode("hamster");
+try {
+    graph.addEdge("cat", "dog", 4);
+    int sizeNeighborsCat = cat.getNeighbors().size();
+    int sizeNeighborsDog = dog.getNeighbors().size();
+    assertEquals(sizeNeighborsCat,1);
+    assertEquals(sizeNeighborsDog,1);
+    graph.addEdge("cat", "hamster", 5);
+    int sizeNeighborsCat2 = cat.getNeighbors().size();
+    assertEquals(sizeNeighborsCat2,2);
+
+}
+           catch(NodeNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+
+    }
+//
+    @Test
+    public void getNodes() {
+        Graph graph = new Graph();
+        Node cat = graph.addNode("cat");
+        Node dog = graph.addNode("dog");
+        Node hamster = graph.addNode("hamster");
+
+        List expected = new ArrayList();
+        expected.add(cat);
+        expected.add(dog);
+        expected.add(hamster);
+
+        assertTrue( graph.getNodes().equals(expected));
+    }
+
+
+
+//
+    @Test
+    public void getNeighbors() {
+        Graph graph = new Graph();
+        Node cat = graph.addNode("cat");
+        Node dog = graph.addNode("dog");
+        Node hamster = graph.addNode("hamster");
+
+        Neighbor neighborForNode1 = new Neighbor(cat,2);
+        Neighbor neighborForNode2 = new Neighbor(dog,2);
+        cat.addNeighbor(neighborForNode1);
+        dog.addNeighbor(neighborForNode2);
+
+        HashSet expected = new HashSet<>();
+        expected.add("dog");
+
+try {
+    assertEquals(expected.size(), graph.getNeighbors("cat").size());
+}   catch(NodeNotFoundException ex){
+    System.out.println(ex.getMessage());
+}
+//
+    }
+
+    @Test
+    public void getSize() {
+        Graph graph = new Graph();
+        graph.addNode("cat");
+        graph.addNode("dog");
+        graph.addNode("hamster");
+
+        assertEquals( 3,  graph.getSize());
+
+        graph.addNode("rabbit");
+        graph.addNode("frog");
+        graph.addNode("guinea pig");
+        graph.addNode("cow");
+
+        assertEquals( 7,  graph.getSize());
     }
 }

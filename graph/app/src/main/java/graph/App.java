@@ -10,5 +10,26 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
+
+
+
+        Graph <String> graph1 = new Graph();
+
+        graph1.addNode("Amman");
+        graph1.addNode("Zarqa");
+        graph1.addNode("Irbid");
+        graph1.addNode("Salt");
+
+        try {
+            graph1.addEdge("Amman","Zarqa",10);
+            graph1.addEdge("Amman","Irbid",13);
+//            System.out.println(graph1.getNeighbors("Amman"));
+        }
+        catch(NodeNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+
+        System.out.println(graph1.getSize());
     }
+
 }
