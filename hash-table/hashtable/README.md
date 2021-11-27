@@ -50,17 +50,33 @@ go to the index returned from hash method
 if the key is exist in this bucket.. return true otherwise.. return false.
 
 * ***Efficiency:***
+* 
+***space:***
 
-***space: O(N)***
+1- for add method: 
+* O(1) .
 
-where n is the size of the array of buckets.
+2- for get method:
+* O(1).
+3-contains:
+* O(1).
 
 ***time:***
 
-* for add, get, contains:
-    * average time : `O(1)`
-    * worst case : `O(n)` "when the all keys is hashed to the same index."
-* for hash: `O(1)`
+
+1- for add method:
+* O(1) .
+* worst case : `O(n)` "when the all keys is hashed to the same index."
+
+2- for get method:
+* O(1).
+* worst case : `O(n)` "when the all keys is hashed to the same index."
+
+  3-contains:
+* O(1).
+* worst case : `O(n)` "when the all keys is hashed to the same index."
+
+4-for hash: `O(1)`
 
 ## API
 
