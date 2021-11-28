@@ -3,6 +3,8 @@
  */
 package graph;
 
+import java.util.List;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
@@ -30,6 +32,46 @@ public class App {
         }
 
         System.out.println(graph1.getSize());
+
+
+
+
+
+        Graph <String> graph2 = new Graph();
+
+        graph1.addNode("A");
+        graph1.addNode("B");
+        graph1.addNode("C");
+        graph1.addNode("D");
+        graph1.addNode("E");
+        graph1.addNode("F");
+        graph1.addNode("G");
+        graph1.addNode("H");
+
+
+        try {
+            graph1.addEdge("A","B",0);
+            graph1.addEdge("A","D",0);
+            graph1.addEdge("B","C",0);
+            graph1.addEdge("B","D",0);
+
+            graph1.addEdge("C","G",0);
+            graph1.addEdge("D","E",0);
+            graph1.addEdge("D","H",0);
+
+            graph1.addEdge("D","F",0);
+            graph1.addEdge("F","H",0);
+
+
+            List<String> bft = graph1.BFT("A");
+            System.out.println(bft);
+        }
+        catch(NodeNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+
     }
+
+
 
 }

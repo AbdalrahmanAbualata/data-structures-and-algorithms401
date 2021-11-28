@@ -1,9 +1,6 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph <T> {
 
@@ -58,6 +55,52 @@ public class Graph <T> {
             throw new NodeNotFoundException("\n---------------------------------------------\n!!---  Node: (" + value.toString() + "), not found!  ---!! \n --------------------------------------------\n");
         }
     }
+
+    ////// code challenge Bf**************************
+    public List<String> BFT(T root) throws NodeNotFoundException {
+        if( nodeNotFound(root) )
+            throw new NodeNotFoundException("Node not found..( "+root.toString()+" )!");
+        Set<T> visited = new HashSet<>();
+        List<String> output = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+
+        Node rootNode = getNode(root);
+        queue.add(rootNode);
+        visited.add((T)rootNode.getValue());
+
+        while( ! queue.isEmpty()){
+            Node node = queue.poll();
+            output.add(node.getValue().toString());
+
+            List<Neighbor> neighbors = node.getNeighbors();
+            Iterator<Neighbor> neighborsItr = neighbors.iterator();
+
+            while(neighborsItr.hasNext()){
+
+                Node neighborNode = neighborsItr.next().getNode();
+                if(visited.contains(neighborNode.getValue())){
+                    continue;
+                }
+                queue.add(neighborNode);
+                visited.add((T)neighborNode.getValue());
+            }
+        }
+        return output;
+    }
+
+    private Node getNode(T node) throws NodeNotFoundException {
+
+        if( nodeNotFound(node) )
+            throw new NodeNotFoundException("Node not found..( "+node.toString()+" )!");
+
+        int index = dictionary.get(node);
+        return  vertices.get(index);
+    }
+    private boolean nodeNotFound(T root) {
+        return  ! dictionary.containsKey(root);
+    }
+
+    ////// code challenge Bf*******************************************
 
     public List<Node> getNodes() {
         return vertices;
