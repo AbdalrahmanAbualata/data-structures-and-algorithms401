@@ -36,9 +36,6 @@ public class App {
 
 
 
-
-        Graph <String> graph2 = new Graph();
-
         graph1.addNode("A");
         graph1.addNode("B");
         graph1.addNode("C");
@@ -65,6 +62,45 @@ public class App {
 
             List<String> bft = graph1.BFT("A");
             System.out.println(bft);
+        }
+        catch(NodeNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+
+
+
+        ////// code challenge business trip*******************************************
+
+
+        try {
+            Graph <String> graph3 = new Graph();
+
+            graph3.addNode("Pandora");
+            graph3.addNode("Arendelle");
+            graph3.addNode("Metroville");
+            graph3.addNode("Monstroplolis");
+            graph3.addNode("Narnia");
+            graph3.addNode("Naboo");
+
+            graph3.addEdge("Pandora","Arendelle",150);
+            graph3.addEdge("Pandora","Metroville",82);
+            graph3.addEdge("Arendelle","Metroville",99);
+            graph3.addEdge("Arendelle","Monstroplolis",42);
+
+            graph3.addEdge("Metroville","Narnia",37);
+            graph3.addEdge("Metroville","Naboo",26);
+            graph3.addEdge("Metroville","Monstroplolis",105);
+
+            graph3.addEdge("Monstroplolis","Naboo",73);
+            graph3.addEdge("Narnia","Naboo",250);
+
+            String[] citys = {"Metroville", "Pandora"};
+            String[] citys2={"Arendelle", "Monstroplolis", "Naboo"};
+            String output = graph3.businessTrip(citys);
+            String output2 = graph3.businessTrip(citys2);
+            System.out.println(output);
+            System.out.println(output2);
+
         }
         catch(NodeNotFoundException ex){
             System.out.println(ex.getMessage());

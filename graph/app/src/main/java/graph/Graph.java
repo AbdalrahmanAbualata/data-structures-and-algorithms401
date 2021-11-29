@@ -1,6 +1,7 @@
 package graph;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Graph <T> {
 
@@ -101,6 +102,46 @@ public class Graph <T> {
     }
 
     ////// code challenge Bf*******************************************
+
+    ////// code challenge business trip*******************************************
+    public String businessTrip(T[] cityNames) throws NodeNotFoundException {
+        int cost = 0 ;
+        if(cityNames.length <=1)
+            return "False, $0";
+
+        for(int i = 0 ; i < cityNames.length -1; i++) {
+
+            Node sourceNode = getNode(cityNames[i]);
+            Node destNode = getNode(cityNames[i+1]);
+
+            Neighbor edge = getEdge(sourceNode, destNode);
+            if ( edge == null)
+                return "False, $0";
+
+            cost += edge.getWeight();
+        }
+        return "True, $"+cost;
+    }
+
+
+    private Neighbor getEdge(Node sourceNode, Node destNode) {
+
+        int indexOfEdge = isThereDirectFlightbetweenTheCity(sourceNode, destNode);
+        if(indexOfEdge == -1)
+            return null;
+        else {
+            Neighbor edge = (Neighbor) (sourceNode.getNeighbors().get(indexOfEdge));
+            return edge;
+        }
+    }
+
+    private int isThereDirectFlightbetweenTheCity(Node sourceNode, Node destNode) {
+        List<Neighbor> neighborsOfSource = sourceNode.getNeighbors(); // git neigbor list for the source city
+        List<Node> nodes = neighborsOfSource.stream().map(Neighbor::getNode).collect(Collectors.toList()); // to collect the nodes from the list of neighbors
+        return nodes.indexOf(destNode); // it returns -1 if the element not in the list
+    }
+    ////// code challenge business trip*******************************************
+
 
     public List<Node> getNodes() {
         return vertices;
