@@ -100,3 +100,6 @@
 ## graph-breadth-first
 
 - [Challenge Code 36 ](./graph/graph-breadth-first/README.md)
+
+## graph-business-trip
+- [Challenge Code 37 ](./graph/graph-business-trip/README.md)
