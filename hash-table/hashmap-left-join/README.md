@@ -34,4 +34,4 @@
 * in the case of the hashtable is full .. the entries will be n entry .. so we need to loop over them again which will take `O(n)` time again
   the result is O(n+n) => `O(n)`
 ## Solution
-![Whiteboard_Hashmap_LEFT_JOIN](./cc33.png)
+![Whiteboard_Hashmap_LEFT_JOIN](./cc33Updated.png)
