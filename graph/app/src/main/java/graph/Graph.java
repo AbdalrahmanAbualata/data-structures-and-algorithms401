@@ -142,6 +142,30 @@ public class Graph <T> {
     }
     ////// code challenge business trip*******************************************
 
+    ////// code challenge graph-depth-first*******************************************
+    public List<T> DFT(T root) throws NodeNotFoundException {
+        if(nodeNotFound(root))
+            return null;
+        List<T> visited = new ArrayList<T>();
+        visited = DFT(root, visited);
+        return visited;
+    }
+    private List<T> DFT(T root, List<T> visited) throws NodeNotFoundException {
+        visited.add(root);
+        Node currentNode = getNode(root);
+        List<Neighbor> neighbors = currentNode.getNeighbors();
+        List<Node> nodes = neighbors.stream().map(n->n.getNode()).collect(Collectors.toList());
+        Iterator<Node> nodesItr = nodes.iterator();
+        while(nodesItr.hasNext()){
+            Node<T> node = nodesItr.next();
+            if(visited.contains(node.getValue()))
+                continue;
+            DFT(node.getValue(), visited);
+        }
+        return visited;
+    }
+    ////// code challenge graph-depth-first*******************************************
+
 
     public List<Node> getNodes() {
         return vertices;
